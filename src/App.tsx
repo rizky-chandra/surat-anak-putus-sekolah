@@ -66,18 +66,25 @@ export default function App() {
             </div>
 
             <div className="text-center transform -rotate-1 space-y-3">
-              <motion.button
+              <motion.div
                 onClick={() => setShowConstitution(!showConstitution)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="text-red-600 text-3xl md:text-4xl font-bold cursor-pointer hover:text-red-700 transition-colors relative group"
+                className="text-red-600 text-3xl md:text-4xl font-bold cursor-pointer hover:text-red-700 transition-colors relative group inline-block"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setShowConstitution(!showConstitution);
+                  }
+                }}
               >
                 WAJIB BELAJAR 9 TAHUN
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 <span className="ml-2 text-lg align-middle opacity-60">
                   {showConstitution ? '▼' : '▶'}
                 </span>
-              </motion.button>
+              </motion.div>
               
               <AnimatePresence>
                 {showConstitution && (
