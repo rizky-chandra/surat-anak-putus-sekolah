@@ -61,10 +61,23 @@ export default function App() {
           >
             <div className="text-center space-y-2">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-800 tracking-wide">KONSTITUSI</h1>
+              <p className="text-xs md:text-sm font-sans text-gray-500 italic">UUD 1945 Pasal 31 Ayat 2</p>
             </div>
 
-            <div className="text-center transform -rotate-1">
+            <div className="text-center transform -rotate-1 space-y-3">
               <p className="text-red-600 text-3xl md:text-4xl font-bold">WAJIB BELAJAR 9 TAHUN</p>
+              <div className="bg-gray-50 border-l-4 border-gray-300 p-4 text-left mx-auto max-w-md">
+                <p className="text-sm md:text-base font-sans text-gray-700 leading-relaxed">
+                  <span className="font-bold">"Setiap warga negara wajib mengikuti pendidikan dasar dan pemerintah wajib membiayainya."</span>
+                </p>
+                <p className="text-xs text-gray-500 mt-2 font-sans">— UUD 1945 Pasal 31 Ayat 2</p>
+              </div>
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-left mx-auto max-w-md mt-3">
+                <p className="text-sm md:text-base font-sans text-gray-700 leading-relaxed">
+                  <span className="font-bold">"Setiap anak berhak atas kelangsungan hidup, tumbuh, dan berkembang serta berhak atas perlindungan dari kekerasan dan diskriminasi."</span>
+                </p>
+                <p className="text-xs text-gray-500 mt-2 font-sans">— UUD 1945 Pasal 28B Ayat 2</p>
+              </div>
             </div>
 
             <div className="text-center space-y-2 py-6 border-y-2 border-dashed border-gray-300 relative">
@@ -73,6 +86,25 @@ export default function App() {
               </p>
               <div className="absolute -right-4 top-0 text-gray-300 transform rotate-12 text-6xl opacity-20 font-typewriter pointer-events-none">
                 DITOLAK
+              </div>
+              <p className="text-sm md:text-base font-sans text-gray-600 italic pt-2">
+                Ini bukan permintaan. Ini adalah hak konstitusional.
+              </p>
+            </div>
+
+            {/* Location Info */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 -mx-4 md:mx-0 shadow-sm">
+              <div className="flex items-start gap-3">
+                <span className="text-3xl" role="img" aria-label="Lokasi">📍</span>
+                <div className="flex-1">
+                  <h3 className="font-typewriter text-sm uppercase tracking-widest text-blue-900 mb-2">Lokasi Kejadian:</h3>
+                  <p className="text-xl md:text-2xl font-bold text-blue-900">Kotapinang</p>
+                  <p className="text-lg text-blue-800">Kabupaten Labuhanbatu Selatan</p>
+                  <p className="text-base text-blue-700">Provinsi Sumatera Utara</p>
+                  <p className="text-sm font-sans text-blue-600 mt-3 italic">
+                    Ini bukan cerita dari tempat jauh. Ini terjadi di sekitar kita.
+                  </p>
+                </div>
               </div>
             </div>
 

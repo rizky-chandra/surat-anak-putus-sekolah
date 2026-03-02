@@ -1,5 +1,7 @@
 {
   "name": "Suara Anak Putus Sekolah",
-  "description": "Halaman interaktif menyuarakan hak pendidikan anak yang terputus karena faktor ekonomi.",
+  "description": "Seorang anak dari Kotapinang, Labuhanbatu Selatan, Sumatera Utara berhenti sekolah karena faktor ekonomi. Konstitusi UUD 1945 Pasal 31 Ayat 2 menjamin Wajib Belajar 9 Tahun - artinya Tuhan pun tidak bisa melarang. Ini adalah suara langsung dari anak yang meminta pertolongan.",
+  "keywords": ["putus sekolah", "wajib belajar 9 tahun", "hak pendidikan", "Kotapinang", "Labuhanbatu Selatan", "Sumatera Utara", "UUD 1945", "pendidikan gratis"],
+  "location": "Kotapinang, Labuhanbatu Selatan, Sumatera Utara",
   "requestFramePermissions": []
 }
