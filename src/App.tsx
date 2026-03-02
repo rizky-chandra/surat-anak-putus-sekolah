@@ -5,6 +5,7 @@ import { Share2, Info, AlertCircle, X, ChevronRight } from 'lucide-react';
 export default function App() {
   const [showContext, setShowContext] = useState(false);
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
+  const [showConstitution, setShowConstitution] = useState(false);
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -65,19 +66,45 @@ export default function App() {
             </div>
 
             <div className="text-center transform -rotate-1 space-y-3">
-              <p className="text-red-600 text-3xl md:text-4xl font-bold">WAJIB BELAJAR 9 TAHUN</p>
-              <div className="bg-gray-50 border-l-4 border-gray-300 p-4 text-left mx-auto max-w-md">
-                <p className="text-sm md:text-base font-sans text-gray-700 leading-relaxed">
-                  <span className="font-bold">"Setiap warga negara wajib mengikuti pendidikan dasar dan pemerintah wajib membiayainya."</span>
-                </p>
-                <p className="text-xs text-gray-500 mt-2 font-sans">— UUD 1945 Pasal 31 Ayat 2</p>
-              </div>
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-left mx-auto max-w-md mt-3">
-                <p className="text-sm md:text-base font-sans text-gray-700 leading-relaxed">
-                  <span className="font-bold">"Setiap anak berhak atas kelangsungan hidup, tumbuh, dan berkembang serta berhak atas perlindungan dari kekerasan dan diskriminasi."</span>
-                </p>
-                <p className="text-xs text-gray-500 mt-2 font-sans">— UUD 1945 Pasal 28B Ayat 2</p>
-              </div>
+              <motion.button
+                onClick={() => setShowConstitution(!showConstitution)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="text-red-600 text-3xl md:text-4xl font-bold cursor-pointer hover:text-red-700 transition-colors relative group"
+              >
+                WAJIB BELAJAR 9 TAHUN
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-red-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span className="ml-2 text-lg align-middle opacity-60">
+                  {showConstitution ? '▼' : '▶'}
+                </span>
+              </motion.button>
+              
+              <AnimatePresence>
+                {showConstitution && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="space-y-3 pt-2">
+                      <div className="bg-gray-50 border-l-4 border-gray-300 p-4 text-left mx-auto max-w-md">
+                        <p className="text-sm md:text-base font-sans text-gray-700 leading-relaxed">
+                          <span className="font-bold">"Setiap warga negara wajib mengikuti pendidikan dasar dan pemerintah wajib membiayainya."</span>
+                        </p>
+                        <p className="text-xs text-gray-500 mt-2 font-sans">— UUD 1945 Pasal 31 Ayat 2</p>
+                      </div>
+                      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-left mx-auto max-w-md">
+                        <p className="text-sm md:text-base font-sans text-gray-700 leading-relaxed">
+                          <span className="font-bold">"Setiap anak berhak atas kelangsungan hidup, tumbuh, dan berkembang serta berhak atas perlindungan dari kekerasan dan diskriminasi."</span>
+                        </p>
+                        <p className="text-xs text-gray-500 mt-2 font-sans">— UUD 1945 Pasal 28B Ayat 2</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <div className="text-center space-y-2 py-6 border-y-2 border-dashed border-gray-300 relative">
